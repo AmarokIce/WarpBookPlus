@@ -46,8 +46,23 @@ runs {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+repositories {
+    mavenLocal()
+    mavenLocal()
+
+    maven {
+        url "http://maven.snowlyicewolf.club"
+        allowInsecureProtocol true
+    }
+
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+}
+
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
+    implementation "club.someoneice.makpiraaqarvik:AmarokMakpiraaqarvik:1.20-1.1"
 }
 
 tasks.withType(ProcessResources).configureEach {
